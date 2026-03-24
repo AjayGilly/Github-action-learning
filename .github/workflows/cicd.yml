@@ -11,6 +11,7 @@ jobs:
         run: echo "code checkout"
       
   build:
+    needs: [code]
     runs-on: ubuntu-latest
     steps:
       - name: Build Docker Container
@@ -24,7 +25,7 @@ jobs:
         run: echo "testing the container"
           
   deploy:
-    needs: [build,test]
+    needs: [code,build,test]
     runs-on: ubuntu-latest
     steps:
       - name: Deploy the app
