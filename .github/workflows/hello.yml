@@ -2,7 +2,7 @@
 
 name: Hello Workflow
 
-# runs on a trigger, branhc me push hoga
+# runs on a trigger, branch me push hoga
 on:
   push:
     branches: [main]
@@ -19,9 +19,8 @@ jobs:
     - name: say hello to username
       run: echo "Hello $USER"
 
-    details:
-      runs-on: ubuntu-latest
-      steps:
-          - name: show  what is the version of python, dockeretc
-            run: docker --version && python --version
-      
+  details:
+    runs-on: ubuntu-latest
+    steps:
+        - name: show what is the version of python, docker etc
+          run: docker --version && python --version
